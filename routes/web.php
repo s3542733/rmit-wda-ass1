@@ -12,3 +12,8 @@
 */
 
 Route::get('/', 'PagesController@home');
+Route::get('home', 'PagesController@home');
+
+Route::get('faq', 'PagesController@faq');
+Route::get('staff', 'PagesController@staff');
+Route::get('createTicket', 'PagesController@createTicket');
