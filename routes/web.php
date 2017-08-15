@@ -11,9 +11,15 @@
 |
 */
 
+//home
 Route::get('/', 'PagesController@home');
 Route::get('home', 'PagesController@home');
 
+//faq
 Route::get('faq', 'PagesController@faq');
-Route::get('staff', 'PagesController@staff');
-Route::get('createTicket', 'PagesController@createTicket');
+
+//ticket
+Route::get('ticketCreate', 'pagesController@ticketCreate');
+
+//staff
+Route::get('staffCommand', 'pagesController@staffCommand');

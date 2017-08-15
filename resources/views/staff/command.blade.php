@@ -1,10 +1,9 @@
 @extends('master')
-@section('title', 'Home')
+@section('title', 'Staff Command')
 @section('content')
     <div class="container">
         <div class="content">
-            <div class="title">Create Ticket</div>
-            <div class="quote">da crete tiket pej</div>
+            <div class="title">Staff Command</div>
         </div>
     </div>
 @endsection
