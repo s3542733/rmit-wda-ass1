@@ -1,15 +1,16 @@
+/* master container */
+
+.master-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+}
+
 /* header */
 
 header {
     height: 120px;
     width: 100%;
-    background-color: white;
-}
-
-.header {
-    height: 125px;
-    margin-left: 10%;
-    margin-right: 10%;
     background-color: dimgrey;
 }
 
@@ -23,36 +24,42 @@ header {
 /* footer */
 
 footer {
-    bottom: 0;
     position: fixed;
+    bottom: 0;
     width: 100%;
+    text-align: center;
 }
 
 .footer {
-    height: 50px;
-    margin:auto;
-    width: 420px;
-    text-align: center;
-    padding: 10px;
-    color: white;
+    height: auto;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: dimgrey;
 }
 
 .footer-span {
-    padding: 20px;
+    padding: 15px;
 }
 
-
-/* navbar */
-
-.navbar-container {
-    margin-left: 10%;
-    margin-right: 10%;
+.footer-span > a {
+    color: lightgrey;
 }
 
 /* content */
 
+.content {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .title {
-    margin-left: 10%;
-    margin-right: 10%;
     font-size: 18px;
 }
+
+.colour-jumbotron {
+    background-color: lightgrey;
+}
+

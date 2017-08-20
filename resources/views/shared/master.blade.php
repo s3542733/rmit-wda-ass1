@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
           crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{asset('\css\master.css')}}">
+    <link rel="stylesheet" href="{{ asset("\css/master.css") }}" type="text/css">
     <script
             src="https://code.jquery.com/jquery-3.2.1.slim.js"
             integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
@@ -22,15 +22,17 @@
 
 </head>
 <body>
-        <div>
-            @include('shared.header')
-        </div>
-        <div>
-            @include('shared.navbar')
-        </div>
-        <div>
-            @yield('content')
-        </div>
-        @include('shared.footer')
+    <?php
+        $_SESSION["staffmode"] = false;
+    ?>
+    <div class="container-fluid master-container">
+        @include('shared.header')
+        @include('shared.navbar')
+        @yield('content')
+    </div>
+    <!--Buffer Zone for the Footer-->
+    <br>
+    <br>
+    @include('shared.footer')
 </body>
 </html>

@@ -18,8 +18,10 @@ Route::get('home', 'PagesController@home');
 //faq
 Route::get('faq', 'PagesController@faq');
 
-//ticket
-Route::get('ticketCreate', 'pagesController@ticketCreate');
-
 //staff
-Route::get('staffCommand', 'pagesController@staffCommand');
+Route::get('staff', 'PagesController@staff')
+    ->name('staff');
+
+//tickets
+Route::resource('tickets', 'TicketController');
+Route::get('create', 'TicketController@create');

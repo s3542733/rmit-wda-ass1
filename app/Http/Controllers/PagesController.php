@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ticket;
 
 class PagesController extends Controller
 {
@@ -13,11 +14,16 @@ class PagesController extends Controller
     public function faq() {
         return view('faq');
     }
-    public function ticketCreate () {
-        return view('ticket.create');
-    }
-    public function staffCommand () {
-        return view('staff.command');
+    public function ticket() {
+        return view('tickets');
     }
 
+    public function create() {
+        return view('tickets.create');
+    }
+
+    public function staff() {
+        $tickets = Ticket::all();
+        return view('staff', compact('tickets'));
+    }
 }
