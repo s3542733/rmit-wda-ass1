@@ -18,10 +18,10 @@ Route::get('home', 'PagesController@home');
 //faq
 Route::get('faq', 'PagesController@faq');
 
-//staff
-Route::get('staff', 'PagesController@staff')
-    ->name('staff');
-
 //tickets
 Route::resource('tickets', 'TicketController');
 Route::get('create', 'TicketController@create');
+
+Auth::routes();
+
+Route::get('tickets', 'HomeController@index')->name('tickets');

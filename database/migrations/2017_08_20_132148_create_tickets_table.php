@@ -20,6 +20,8 @@ class CreateTicketsTable extends Migration
             $table->string('operating_system');
             $table->string('issue_title');
             $table->string('issue_description');
+            $table->string('priority');
+            $table->integer('escalation_level');
             $table->string('status');
             $table->timestamps();
         });

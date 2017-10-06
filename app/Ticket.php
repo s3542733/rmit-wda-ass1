@@ -11,6 +11,8 @@ class Ticket extends Model
         'operating_system',
         'issue_title',
         'issue_description',
+        'priority',
+        'escalation_level',
         'status',
     ];
 

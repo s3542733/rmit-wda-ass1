@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ticket;
-use App\User;
 use App\Comment;
+use Auth;
 
 class TicketController extends Controller
 {
 
     public function index() {
-        $tickets = Ticket::all();
+        $tickets = Ticket::where('user_id', '=', Auth::user()->id)->get();
         return view('tickets.index', compact('tickets'));
     }
 
@@ -21,28 +21,20 @@ class TicketController extends Controller
 
     public function store(Request $request) {
         $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
             'issue_title' => 'required',
             'operating_system' => 'required',
             'issue_description' => 'required',
-            'status' => 'required',
         ]);
         $requestAll = $request->all();
 
-        $user = new User;
-        $user->first_name = $requestAll['first_name'];
-        $user->last_name = $requestAll['last_name'];
-        $user->email = $requestAll['email'];
-        $user->save();
-
         $ticket = new Ticket;
-        $ticket->user_id = $user->id;
+        $ticket->user_id = Auth::user()->id;
         $ticket->issue_title = $requestAll['issue_title'];
         $ticket->operating_system = $requestAll['operating_system'];
         $ticket->issue_description = $requestAll['issue_description'];
-        $ticket->status = $requestAll['status'];
+        $ticket->priority = "Low";
+        $ticket->escalation_level = "1";
+        $ticket->status = "Pending";
         $ticket->save();
 
         return redirect()->route('tickets.index') ->with('success', 'Ticket successfully Submitted!');

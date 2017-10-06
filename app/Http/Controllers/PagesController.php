@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Ticket;
-
 class PagesController extends Controller
 {
     //
@@ -20,10 +17,5 @@ class PagesController extends Controller
 
     public function create() {
         return view('tickets.create');
-    }
-
-    public function staff() {
-        $tickets = Ticket::all();
-        return view('staff', compact('tickets'));
     }
 }

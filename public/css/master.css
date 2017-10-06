@@ -62,4 +62,9 @@ footer {
 .colour-jumbotron {
     background-color: lightgrey;
 }
+/*login container*/
 
+.logreg-container {
+    text-align: center;
+    width: 100%;
+}

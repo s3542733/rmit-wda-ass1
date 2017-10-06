@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreateUsersTable extends Migration
 {
     /**
-     * Run the migrations.
+     * run the migrations.
      *
      * @return void
      */
@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
+            $table->string('password');
+            $table->remembertoken();
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        schema::dropIfExists('users');
     }
 }

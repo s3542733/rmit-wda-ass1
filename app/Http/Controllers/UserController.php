@@ -15,18 +15,19 @@ class UserController extends Controller
 
     public function create() {
         $user = new User;
-        return view('tic.create', ['user' => $user]);
+        return view('tickets.create', ['user' => $user]);
     }
 
     public function store(Request $request) {
         $this->validate($request, [
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required',
         ]);
         User::create($request->all());
 
-        return redirect()->route('tickets.index')->with('success', 'User created Successfully!');
+        return redirect()->route('login')->with('success', 'Account created Successfully!');
     }
 
 }

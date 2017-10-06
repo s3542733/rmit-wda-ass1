@@ -14,9 +14,13 @@
             <hr>
             <p>To get started simply click one of the buttons below!</p>
             <div class="btn-group-lg">
-                <a href="{{url('tickets')}}" class="btn btn-primary btn-lg">View Tickets</a>
+                @if(Auth::guest())
+                    <a href="{{url('login')}}" class="btn btn-primary btn-lg">Login</a>
+                    <a href="{{url('register')}}" class="btn btn-primary btn-lg">Register</a>
+                @else
+                    <a href="{{url('tickets')}}" class="btn btn-primary btn-lg">View Tickets</a>
+                @endif
                 <a href="{{url('faq')}}" class="btn btn-primary btn-lg">Learn More</a>
-                <a href="{{url('staff')}}" class="btn btn-primary btn-lg">Staff Section</a>
             </div>
         </div>
     </div>
